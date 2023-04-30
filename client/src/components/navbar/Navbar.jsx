@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from "react-router-dom";
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
@@ -10,29 +10,40 @@ import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { DarkMode } from '../../../node_modules/@mui/icons-material/index';
 import "./navbar.scss"
+import { DarkModeContext } from '../../context/darkModeContext';
+import { AuthContext } from '../../context/authContext';
 
 const Navbar = () => {
+
+  const { toggle, darkMode } = useContext(DarkModeContext)
+  const { currentUser } = useContext(AuthContext)
+
   return (
     <div className="navbar">
       <div className="left">
-        <Link to="/" style={{textDecoration:"none"}}>
-        <span>AugLink</span>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span>AugLink</span>
         </Link>
-        <HomeOutlinedIcon/>
-        <DarkModeOutlinedIcon/>
-        <GridViewOutlinedIcon/>
+        <HomeOutlinedIcon />
+        {darkMode ? (
+          <WbSunnyOutlinedIcon onClick={toggle} />
+
+        ) : (
+          <DarkModeOutlinedIcon onClick={toggle} />
+        )}
+        <GridViewOutlinedIcon />
         <div className="search">
-            <SearchOutlinedIcon/>
-            <input type="text" placeholder="Search..." />
+          <SearchOutlinedIcon />
+          <input type="text" placeholder="Search..." />
         </div>
       </div>
       <div className="right">
-        <PersonOutlinedIcon/>
-        <EmailOutlinedIcon/>
-        <NotificationsOutlinedIcon/>
+        <PersonOutlinedIcon />
+        <EmailOutlinedIcon />
+        <NotificationsOutlinedIcon />
         <div className="user">
-            <img src="https://i.imgur.com/2tH8Otv.png" alt="" />
-            <span>JC Denton</span>
+          <img src={currentUser.profilePic} alt="" />
+          <span>{currentUser.name}</span>
         </div>
       </div>
     </div>
