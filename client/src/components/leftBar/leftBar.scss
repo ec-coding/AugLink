@@ -31,7 +31,7 @@
             .menu {
                 display: flex;
                 flex-direction: column;
-                gap: 20px;
+                gap: 5px;
 
                 span {
                     font-size: 12px;
@@ -58,13 +58,92 @@
                     display: flex;
                     align-items: center;
                     gap: 10px;
+                    background-color: orange;
+                    position: relative;
+                    width: 85%;
 
-                    img {
-                        width: 30px;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 0 25px 25px 0;
+                        border-color: transparent transparent themed("bg") transparent;
+                        z-index: 1;
                     }
 
-                    span {
-                        font-size: 14px;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 25px 0 0 25px;
+                        border-color: themed("bg") transparent transparent transparent;
+                    }
+
+                    &:hover {
+                        transition-duration: 0.2s;
+                        width: 100%;
+                    }
+
+                    &:active {
+                        transition-duration: 0.2s;
+                        width: 100%;
+                    }
+
+                    div {
+                        background-color: rgba(92, 60, 0, 0.95);
+                        color: white;
+                        width: 100%;
+                        margin: 7.5px;
+                        padding: 2.5px 25px;
+                        display: flex;
+                        flex-direction: row-reverse;
+                        align-items: center;
+                        justify-content: right;
+                        gap: 10px;
+
+                        img {
+                            width: 30px;
+                        }
+
+                        span {
+                            font-size: 14px;
+                        }
+
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 0;
+                            height: 0;
+                            border-style: solid;
+                            border-width: 0px 35px 35px 0px;
+                            border-color: transparent transparent orange transparent;
+                        }
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            width: 0;
+                            height: 0;
+                            border-style: solid;
+                            border-width: 35px 0 0 35px;
+                            border-color: orange transparent transparent transparent;
+                        }
+
+                        &:hover {
+                            background-color: rgba(54, 36, 0, 0.95);
+                        }
                     }
                 }
             }

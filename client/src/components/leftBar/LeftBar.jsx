@@ -28,64 +28,90 @@ const LeftBar = () => {
                         <span>{currentUser.name}</span>
                     </div>
                     <div className="item">
-                        <img src={Friends} alt="" />
-                        <span>Friends</span>
+                        <div>
+                            <img src={Friends} alt="" />
+                            <span>FRIENDS</span>
+                        </div>
                     </div>
                     <div className="item">
-                        <img src={Groups} alt="" />
-                        <span>Groups</span>
+                        <div>
+                            <img src={Groups} alt="" />
+                            <span>GROUPS</span>
+                        </div>
                     </div>
                     <div className="item">
-                        <img src={Market} alt="" />
-                        <span>Market</span>
+                        <div>
+                            <img src={Market} alt="" />
+                            <span>MARKET</span>
+                        </div>
                     </div>
                     <div className="item">
-                        <img src={Watch} alt="" />
-                        <span>Watch</span>
+                        <div>
+                            <img src={Watch} alt="" />
+                            <span>WATCH</span>
+                        </div>
                     </div>
                     <div className="item">
-                        <img src={Memories} alt="" />
-                        <span>Memories</span>
+                        <div>
+                            <img src={Memories} alt="" />
+                            <span>MEMORIES</span>
+                        </div>
                     </div>
                 </div>
                 <hr />
                 <div className="menu">
                     <span>Your shortcuts</span>
                     <div className="item">
-                        <img src={Events} alt="" />
-                        <span>Events</span>
+                        <div>
+                            <img src={Events} alt="" />
+                            <span>EVENTS</span>
+                        </div>
                     </div>
                     <div className="item">
-                        <img src={Gaming} alt="" />
-                        <span>Gaming</span>
+                        <div>
+                            <img src={Gaming} alt="" />
+                            <span>GAMING</span>
+                        </div>
                     </div>
                     <div className="item">
-                        <img src={Gallery} alt="" />
-                        <span>Gallery</span>
+                        <div>
+                            <img src={Gallery} alt="" />
+                            <span>GALLERY</span>
+                        </div>
                     </div>
                     <div className="item">
-                        <img src={Videos} alt="" />
-                        <span>Videos</span>
+                        <div>
+                            <img src={Videos} alt="" />
+                            <span>VIDEOS</span>
+                        </div>
                     </div>
                     <div className="item">
-                        <img src={Messages} alt="" />
-                        <span>Messages</span>
+                        <div>
+                            <img src={Messages} alt="" />
+                            <span>MESSAGES</span>
+                        </div>
                     </div>
                 </div>
                 <hr />
                 <div className="menu">
                     <span>Others</span>
                     <div className="item">
-                        <img src={Tutorials} alt="" />
-                        <span>Tutorials</span>
+                        <div>
+                            <img src={Tutorials} alt="" />
+                            <span>TUTORIALS</span>
+                        </div>
                     </div>
                     <div className="item">
-                        <img src={Courses} alt="" />
-                        <span>Courses</span>
+                        <div>
+                            <img src={Courses} alt="" />
+                            <span>COURSES</span>
+                        </div>
                     </div>
                     <div className="item">
-                        <img src={Fund} alt="" />
-                        <span>Fund</span>
+                        <div>
+                            <img src={Fund} alt="" />
+                            <span>FUND</span>
+                        </div>
                     </div>
                 </div>
             </div>

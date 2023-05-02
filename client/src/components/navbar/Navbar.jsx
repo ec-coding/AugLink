@@ -22,7 +22,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="left">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span>AugLink</span>
+          <img src="https://i.imgur.com/w4lLPlJ.png" alt="" />
         </Link>
         <HomeOutlinedIcon />
         {darkMode ? (
