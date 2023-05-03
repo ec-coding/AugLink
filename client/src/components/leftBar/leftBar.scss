@@ -9,6 +9,7 @@
         overflow: scroll;
         background-color: themed("bg");
         color: themed("textColor");
+        z-index: 1;
 
         @include mobile {
             display: none;
@@ -59,6 +60,7 @@
                     align-items: center;
                     gap: 10px;
                     background-color: orange;
+                    border-radius: 5px;
                     position: relative;
                     width: 85%;
 

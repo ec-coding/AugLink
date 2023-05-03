@@ -8,6 +8,7 @@
         height: calc(100vh - 70px);
         overflow: scroll;
         background-color: themed("bgSoft");
+        z-index: 1;
 
         @include mobile {
             display: none;
