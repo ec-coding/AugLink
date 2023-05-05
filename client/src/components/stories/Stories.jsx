@@ -20,8 +20,8 @@ const Stories = () => {
         },
         {
             id: 3,
-            name: "Harvester Attacks",
-            img: "https://icdn.computec.de/videos/img/medium/2016/8/70500.jpg"
+            name: "Shadow Ops",
+            img: "https://i.imgur.com/ThfXten.png"
         },
         {
             id: 4,
