@@ -28,14 +28,14 @@ const Post = ({ post }) => {
               >
                 <span className='name'>{post.name}</span>
               </Link>
-              <span className='date'>{moment(post.createdAt).fromNow}</span>
+              <span className='date'>{moment(post.createdAt).fromNow()}</span>
             </div>
           </div>
           <MoreHorizIcon />
         </div>
         <div className="content">
           <p>{post.desc}</p>
-          <img src={"/upload/" + post.img} alt="" />
+          <img src={"/uploads/" + post.img} alt="" />
         </div>
         <div className="info">
           <div className="item">
@@ -51,7 +51,7 @@ const Post = ({ post }) => {
             Share
           </div>
         </div>
-        {commentOpen && <Comments />}
+        {commentOpen && <Comments postId={post.id} />}
       </div>
     </div>
   )

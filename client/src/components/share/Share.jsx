@@ -23,6 +23,7 @@ const Share = () => {
 
     const { currentUser } = useContext(AuthContext);
 
+    // Re-fetches data when adding a new comment to a post
     const queryClient = useQueryClient();
 
     // Mutations allow you to fetch data and add new data
