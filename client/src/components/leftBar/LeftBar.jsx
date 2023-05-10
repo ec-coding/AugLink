@@ -1,4 +1,5 @@
-import React, { useContext } from 'react'
+import React, { useContext } from 'react';
+import { Link } from "react-router-dom";
 import Friends from './../../assets/1.png';
 import Groups from './../../assets/2.png';
 import Market from './../../assets/3.png';
@@ -14,51 +15,65 @@ import Courses from './../../assets/12.png';
 import Fund from './../../assets/13.png';
 import "./leftBar.scss"
 import { AuthContext } from '../../context/authContext';
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import { makeRequest } from '../../axios';
+import { useLocation } from "react-router-dom";
 
 const LeftBar = () => {
 
     const { currentUser } = useContext(AuthContext)
+
+    const userId = parseInt(useLocation().pathname.split("/")[2])
+
+    const { isLoading, error, data } = useQuery(['user'], () =>
+      makeRequest.get("/users/find/" + userId).then((res) => {
+        return res.data;
+      })
+    );
 
     return (
         <div className="leftBar">
             <div className="container">
                 <div className="menu">
                     <div className="user">
-                        <img src={currentUser.profilePic} alt="" />
+                        <Link to={"/profile/" + currentUser.id}>
+                            <img src={currentUser.profilePic} alt="" />
+                        </Link>
                         <span>{currentUser.name}</span>
                     </div>
+
                     <div className="item">
                         <div>
-                            <img src={Friends} alt="" />
+                            {/* <img src={Friends} alt="" /> */}
                             <span>FRIENDS</span>
                         </div>
                     </div>
                     <div className="item">
                         <div>
-                            <img src={Groups} alt="" />
+                            {/* <img src={Groups} alt="" /> */}
                             <span>GROUPS</span>
                         </div>
                     </div>
                     <div className="item">
                         <div>
-                            <img src={Market} alt="" />
+                            {/* <img src={Market} alt="" /> */}
                             <span>MARKET</span>
                         </div>
                     </div>
                     <div className="item">
                         <div>
-                            <img src={Watch} alt="" />
+                            {/* <img src={Watch} alt="" /> */}
                             <span>WATCH</span>
                         </div>
                     </div>
                     <div className="item">
                         <div>
-                            <img src={Memories} alt="" />
+                            {/* <img src={Memories} alt="" /> */}
                             <span>MEMORIES</span>
                         </div>
                     </div>
                 </div>
-                <hr />
+                {/* <hr />
                 <div className="menu">
                     <span>Your shortcuts</span>
                     <div className="item">
@@ -92,8 +107,8 @@ const LeftBar = () => {
                         </div>
                     </div>
                 </div>
-                <hr />
-                <div className="menu">
+                <hr /> */}
+                {/* <div className="menu">
                     <span>Others</span>
                     <div className="item">
                         <div>
@@ -113,7 +128,7 @@ const LeftBar = () => {
                             <span>FUND</span>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )

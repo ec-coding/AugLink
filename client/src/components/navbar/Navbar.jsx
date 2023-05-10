@@ -12,6 +12,7 @@ import { DarkMode } from '../../../node_modules/@mui/icons-material/index';
 import "./navbar.scss"
 import { DarkModeContext } from '../../context/darkModeContext';
 import { AuthContext } from '../../context/authContext';
+import Dropdown from "../navbarDropdown/Dropdown"
 
 const Navbar = () => {
 
@@ -42,8 +43,7 @@ const Navbar = () => {
         <EmailOutlinedIcon />
         <NotificationsOutlinedIcon />
         <div className="user">
-          <img src={currentUser.profilePic} alt="" />
-          <span>{currentUser.name}</span>
+          <Dropdown />
         </div>
       </div>
     </div>

@@ -58,55 +58,61 @@ const Profile = () => {
 
   return (
     <div className="profile">
-      {isLoading ? "loading" : <><div className="images">
-        <img src={"/uploads/" + data.coverPic} alt="" className="cover" />
-        <img src={"/uploads/" + data.profilePic} alt="" className="profilePic" />
-      </div>
-        <div className="profileContainer">
-          <div className="uInfo">
-            <div className="left">
-              <a href="http://facebook.com">
-                <FacebookTwoToneIcon fontSize="large" />
-              </a>
-              <a href="http://instagram.com">
-                <InstagramIcon fontSize="large" />
-              </a>
-              <a href="http://twitter.com">
-                <TwitterIcon fontSize="large" />
-              </a>
-              <a href="http://linkedin.com">
-                <LinkedInIcon fontSize="large" />
-              </a>
-              <a href="http://pinterest.com">
-                <PinterestIcon fontSize="large" />
-              </a>
-            </div>
-            <div className="center">
-              <span>{data.name}</span>
-              <div className="info">
-                <div className="item">
-                  <PlaceIcon />
-                  <span>{data.city}</span>
-                </div>
-                <div className="item">
-                  <LanguageIcon />
-                  <span>{data.website}</span>
-                </div>
-              </div>
-              {relationshipIsLoading ? "Loading" : userId === currentUser.id ? (
-                <button onClick={() => setOpenUpdate(true)}>Update</button>
-              ) : (
-                <button onClick={handleFollow}>{relationshipData.includes(currentUser.id) ? "Following" : "Follow"}</button>
-              )}
-            </div>
-            <div className="right">
-              <EmailOutlinedIcon />
-              <MoreVertIcon />
-            </div>
+      {isLoading ? (
+        "loading"
+      ) : (
+        <>
+          <div className="images">
+            <img src={"/uploads/" + data.coverPic} alt="" className="cover" />
+            <img src={"/uploads/" + data.profilePic} alt="" className="profilePic" />
           </div>
-          <Posts userId={userId} />
-        </div></>}
-        {openUpdate && <Update setOpenUpdate={setOpenUpdate} user={data} />}
+          <div className="profileContainer">
+            <div className="uInfo">
+              <div className="left">
+                <a href="http://facebook.com">
+                  <FacebookTwoToneIcon fontSize="large" />
+                </a>
+                <a href="http://instagram.com">
+                  <InstagramIcon fontSize="large" />
+                </a>
+                <a href="http://twitter.com">
+                  <TwitterIcon fontSize="large" />
+                </a>
+                <a href="http://linkedin.com">
+                  <LinkedInIcon fontSize="large" />
+                </a>
+                <a href="http://pinterest.com">
+                  <PinterestIcon fontSize="large" />
+                </a>
+              </div>
+              <div className="center">
+                <span>{data.name}</span>
+                <div className="info">
+                  <div className="item">
+                    <PlaceIcon />
+                    <span>{data.city}</span>
+                  </div>
+                  <div className="item">
+                    <LanguageIcon />
+                    <span>{data.website}</span>
+                  </div>
+                </div>
+                {relationshipIsLoading ? "Loading" : userId === currentUser.id ? (
+                  <button onClick={() => setOpenUpdate(true)}>Update</button>
+                ) : (
+                  <button onClick={handleFollow}>{relationshipData.includes(currentUser.id) ? "Following" : "Follow"}</button>
+                )}
+              </div>
+              <div className="right">
+                <EmailOutlinedIcon />
+                <MoreVertIcon />
+              </div>
+            </div>
+            <Posts userId={userId} />
+          </div>
+        </>
+      )}
+      {openUpdate && <Update setOpenUpdate={setOpenUpdate} user={data} />}
     </div>
   )
 }

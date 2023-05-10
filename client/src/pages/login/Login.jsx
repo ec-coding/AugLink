@@ -1,9 +1,9 @@
 
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/authContext";
-import "./login.scss"
 import { Link } from "react-router-dom";
 import { useNavigate } from "../../../node_modules/react-router-dom/dist/index";
+import "./login.scss"
 
 const Login = () => {
   const [inputs, setInputs] = useState({
@@ -50,7 +50,7 @@ const Login = () => {
           <form action="">
             <input type="text" placeholder="Username" name="username" onChange={handleChange} />
             <input type="password" placeholder="Password" name="password" onChange={handleChange} />
-            {err & err}
+            {/* {err & err} */}
             <button onClick={handleLogin}>Login</button>
           </form>
         </div>

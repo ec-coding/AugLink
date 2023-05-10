@@ -12,7 +12,8 @@ import {
   Route,
   Outlet,
 } from "react-router-dom";
-import "./style.scss"
+import "./style.scss";
+import "./index.css";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
