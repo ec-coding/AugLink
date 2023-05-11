@@ -63,7 +63,7 @@ const Profile = () => {
       ) : (
         <>
           <div className="images">
-            <img src={"/uploads/" + data.coverPic} alt="" className="cover" />
+            <img src={"/uploads/" + data?.coverPic} alt="" className="cover" />
             <img src={"/uploads/" + data.profilePic} alt="" className="profilePic" />
           </div>
           <div className="profileContainer">

@@ -8,7 +8,7 @@
   }
 })('Ribbons', function () {
   var _w = window,
-    _b = document.body,
+    _b = document.getElementById('ribbons'),
     _d = document.documentElement
 
   // random helper
@@ -208,9 +208,9 @@
 
         window.addEventListener('resize', this._onResize)
         window.addEventListener('scroll', this._onScroll)
-        document.body.appendChild(this._canvas)
+        _b.appendChild(this._canvas)
       } catch (e) {
-        console.warn('Canvas Context Error: ' + e.toString())
+        // console.warn('Canvas Context Error: ' + e.toString())
         return
       }
       this._onDraw()
@@ -425,7 +425,7 @@
       this._scroll = screen.scrolly
     }
   }
-
+  console.log('animation started');
   // export
   return Factory
 })

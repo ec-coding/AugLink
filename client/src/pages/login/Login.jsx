@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../context/authContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "../../../node_modules/react-router-dom/dist/index";
+import { useHistory } from "react-router-dom";
 import "./login.scss"
 
 const Login = () => {
@@ -33,7 +34,7 @@ const Login = () => {
   return (
     <div className="login">
       <div className="card">
-        <div className="left">
+        <div id="ribbons" className="left">
           <h1>Hello World.</h1>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus necessitatibus sunt
@@ -47,7 +48,7 @@ const Login = () => {
         </div>
         <div className="right">
           <h1>Login</h1>
-          <form action="">
+          <form action="" onSubmit={handleLogin}>
             <input type="text" placeholder="Username" name="username" onChange={handleChange} />
             <input type="password" placeholder="Password" name="password" onChange={handleChange} />
             {/* {err & err} */}
