@@ -40,6 +40,7 @@
 
                         .date {
                             font-size: 12px;
+                            font-family: "Open Sans", sans-serif;
                         }
                     }
                 }
@@ -58,6 +59,10 @@
 
             .content {
                 margin: 20px 0px;
+
+                p {
+                    font-family: "Open Sans", sans-serif;
+                }
 
                 img {
                     width: 100%;

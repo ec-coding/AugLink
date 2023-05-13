@@ -6,16 +6,16 @@ import "./register.scss"
 
 const Register = () => {
   const [inputs, setInputs] = useState({
-    username:"",
-    email:"",
-    password:"",
-    name:"",
+    username: "",
+    email: "",
+    password: "",
+    name: "",
   })
   const [err, setErr] = useState(null)
 
 
   const handleChange = (e) => {
-    setInputs(prev=>({...prev, [e.target.name]:e.target.value}))
+    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }))
   };
 
   const handleClick = async (e) => {
@@ -33,26 +33,24 @@ const Register = () => {
     <div className="register">
       <div className="card">
         <div className="left">
-          <h1>Aug Link</h1>
+          <img src="https://i.imgur.com/w4lLPlJ.png" alt="" />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus necessitatibus sunt
-            aliquid ducimus dolorum, sit dolore nam reiciendis soluta esse, vitae eveniet similique
-            ipsum. Accusamus vitae unde in minima. Non.
+            Embrace the Augmented Future. Connect with the World.
           </p>
-          <span>Do you have an account?</span>
+          <span>Do you have an existing account?</span>
           <Link to="/login">
-            <button>Login</button>
+            <button>LOGIN</button>
           </Link>
         </div>
         <div className="right">
-          <h1>Register</h1>
+          <h1>REGISTER</h1>
           <form action="">
             <input type="text" placeholder="Username" name="username" onChange={handleChange} />
             <input type="email" placeholder="Email" name="email" onChange={handleChange} />
             <input type="password" placeholder="Password" name="password" onChange={handleChange} />
             <input type="text" placeholder="Name" name="name" onChange={handleChange} />
             {err && err}
-              <button onClick={handleClick} >Register</button>
+            <button onClick={handleClick} >SUBMIT</button>
           </form>
         </div>
       </div>

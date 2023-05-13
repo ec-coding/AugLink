@@ -3,48 +3,58 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('');
-    background-size: cover;
-    background-repeat: no-repeat;
-
+    background-image: radial-gradient( circle, rgba(218, 158, 29, 0.35) 0%, rgba( 0, 0, 0, 0.65 ) 100% );
     .card {
         width: 50%;
         display: flex;
-        background-color: white;
+        // background-color: rgba(255, 255, 255, 0.75);
+        background: rgba(0, 0, 0, 0.5);
         border-radius: 10px;
         min-height: 600px;
         overflow: hidden;
 
         .left {
             flex: 1;
-            background: linear-gradient(rgba(255, 255, 0, 0.25), rgba(160, 81, 45, 0.25)), url('https://c4.wallpaperflare.com/wallpaper/105/953/125/deus-ex-human-revolution-abstract-video-games-deus-ex-wallpaper-preview.jpg') 
-                center;
+            // background: linear-gradient(rgba(255, 255, 0, 0.25), rgba(160, 81, 45, 0.25)), url('') 
+            //     center;
+            // background-image: linear-gradient(rgba(218, 158, 29, 0.5) 0%, rgba(100, 71, 5, 0.5) 10%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.5) 80%, rgba(100, 71, 5, 0.5) 90%, rgba(218, 158, 29, 0.5) 100%);
+            // background: rgba(0, 0, 0, 0.75);
             background-size: cover;
             padding: 50px;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             gap: 30px;
             color: white;
+            background: rgba(0, 0, 0, 0.25);
 
             h1 {
                 font-size: 100px;
                 line-height: 100px;
             }
 
-            p {}
+            p {
+                font-size: 18px;
+                margin-bottom: 50px;
+            }
 
             span {
-                font-size: 14px;
+                font-size: 16px;
             }
 
             button {
-                width: 50%;
+                // width: 50%;
                 padding: 10px;
                 border: none;
-                background-color: white;
-                color: rebeccapurple;
+                background: rgba(0, 0, 0);
+                color: white;
                 font-weight: bold;
                 cursor: pointer;
+                border: 2px solid rgba(255, 217, 0, 0.75);
+
+                &:hover {
+                    background: rgba(255, 217, 0, 0.5);
+                }
             }
         }
 
@@ -53,11 +63,12 @@
             padding: 50px;
             display: flex;
             flex-direction: column;
-            gap: 50px;
+            gap: 25px;
             justify-content: center;
 
             h1 {
-                color: #555;
+                color: #E7C250;
+                font-size: 24px;
             }
 
             form {
@@ -68,17 +79,33 @@
                 input {
                     border: none;
                     border-bottom: 1px solid lightgray;
+                    border-right: 1px solid lightgray;
                     padding: 20px 10px;
+                    margin-bottom: 10px;
+                    background: rgba(255, 217, 0, 0.25);
+                }
+
+                input, select, textarea{
+                    color: rgb(236, 236, 236)
+                }
+                
+                textarea:focus, input:focus {
+                    color: rgb(236, 236, 236)
                 }
 
                 button {
                     width: 50%;
                     padding: 10px;
                     bottom: none;
-                    background-color: cornflowerblue;
-                    color: white;
+                    background-color: rgba(255, 217, 0, 0.75);
+                    color: black;
                     font-weight: bold;
                     cursor: pointer;
+                    margin-top: 15px;
+
+                    &:hover {
+                        background: rgba(255, 217, 0, 0.95);
+                    }
                 }
             }
         }

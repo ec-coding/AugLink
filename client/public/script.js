@@ -8,7 +8,7 @@
   }
 })('Ribbons', function () {
   var _w = window,
-    _b = document.getElementById('ribbons'),
+    _b = document.body,
     _d = document.documentElement
 
   // random helper
@@ -425,7 +425,7 @@
       this._scroll = screen.scrolly
     }
   }
-  console.log('animation started');
+
   // export
   return Factory
 })

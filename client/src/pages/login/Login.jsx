@@ -34,28 +34,27 @@ const Login = () => {
   return (
     <div className="login">
       <div className="card">
-        <div id="ribbons" className="left">
-          <h1>Hello World.</h1>
+        <div className="left">
+          <img src="https://i.imgur.com/w4lLPlJ.png" alt="" />
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus necessitatibus sunt
-            aliquid ducimus dolorum, sit dolore nam reiciendis soluta esse, vitae eveniet similique
-            ipsum. Accusamus vitae unde in minima. Non.
+            Embrace the Augmented Future. Connect with the World.
           </p>
-          <span>Don't you have an account?</span>
+          <span>Do you require an account?</span>
           <Link to="/register">
-            <button>Register</button>
+            <button>REGISTER</button>
           </Link>
         </div>
         <div className="right">
-          <h1>Login</h1>
+          <h1>ENTER CREDENTIALS</h1>
           <form action="" onSubmit={handleLogin}>
             <input type="text" placeholder="Username" name="username" onChange={handleChange} />
             <input type="password" placeholder="Password" name="password" onChange={handleChange} />
             {/* {err & err} */}
-            <button onClick={handleLogin}>Login</button>
+            <button onClick={handleLogin}>LOGIN</button>
           </form>
         </div>
       </div>
+      <script src="/script.js"></script>
     </div>
   )
 }
