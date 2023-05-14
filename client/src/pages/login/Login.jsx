@@ -4,6 +4,8 @@ import { AuthContext } from "../../context/authContext";
 import { Link } from "react-router-dom";
 import { useNavigate } from "../../../node_modules/react-router-dom/dist/index";
 import { useHistory } from "react-router-dom";
+import { motion } from "framer-motion";
+import Typed from 'react-typed';
 import "./login.scss"
 
 const Login = () => {
@@ -32,19 +34,29 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
+    <motion.div className="login">
       <div className="card">
-        <div className="left">
+        <motion.div className="left"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.75 }}
+        >
           <img src="https://i.imgur.com/w4lLPlJ.png" alt="" />
-          <p>
-            Embrace the Augmented Future. Connect with the World.
-          </p>
+          <Typed
+            strings={[
+              "Embrace the Augmented Future.<br>Connect with the World."    
+            ]}
+            className={"rt-subheader"}
+            typeSpeed={25}
+            backSpeed={50}
+          />
           <span>Do you require an account?</span>
           <Link to="/register">
             <button>REGISTER</button>
           </Link>
-        </div>
-        <div className="right">
+        </motion.div>
+        <motion.div className="right"
+        >
           <h1>ENTER CREDENTIALS</h1>
           <form action="" onSubmit={handleLogin}>
             <input type="text" placeholder="Username" name="username" onChange={handleChange} />
@@ -52,10 +64,10 @@ const Login = () => {
             {/* {err & err} */}
             <button onClick={handleLogin}>LOGIN</button>
           </form>
-        </div>
+        </motion.div>
       </div>
       <script src="/script.js"></script>
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,7 +1,9 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { motion } from "framer-motion";
+import Typed from 'react-typed';
+import { useNavigate } from "../../../node_modules/react-router-dom/dist/index";
 import "./register.scss"
 
 const Register = () => {
@@ -13,7 +15,8 @@ const Register = () => {
   })
   const [err, setErr] = useState(null)
 
-
+  const navigate = useNavigate()
+  
   const handleChange = (e) => {
     setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }))
   };
@@ -23,7 +26,8 @@ const Register = () => {
     e.preventDefault()
 
     try {
-      await axios.post("http://localhost:5050/api/auth/register", inputs)
+      await axios.post("http://localhost:5050/api/auth/register", inputs);
+      navigate("/login")
     } catch (err) {
       setErr(err.response.data)
     }
@@ -32,17 +36,27 @@ const Register = () => {
   return (
     <div className="register">
       <div className="card">
-        <div className="left">
+        <motion.div className="left"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.75 }}
+        >
           <img src="https://i.imgur.com/w4lLPlJ.png" alt="" />
-          <p>
-            Embrace the Augmented Future. Connect with the World.
-          </p>
+          <Typed
+            strings={[
+              "Embrace the Augmented Future.<br>Connect with the World."    
+            ]}
+            className={"rt-subheader"}
+            typeSpeed={25}
+            backSpeed={50}
+          />
           <span>Do you have an existing account?</span>
           <Link to="/login">
             <button>LOGIN</button>
           </Link>
-        </div>
-        <div className="right">
+        </motion.div>
+        <motion.div className="right"
+        >
           <h1>REGISTER</h1>
           <form action="">
             <input type="text" placeholder="Username" name="username" onChange={handleChange} />
@@ -52,7 +66,7 @@ const Register = () => {
             {err && err}
             <button onClick={handleClick} >SUBMIT</button>
           </form>
-        </div>
+        </motion.div>
       </div>
     </div>
   )
