@@ -1,7 +1,12 @@
 import React from 'react'
 import "./rightBar.scss"
+import AnimatedButtonBlue from '../animatedButton/AnimatedButtonBlue';
+import AnimatedButtonRed from '../animatedButton/AnimatedButtonRed';
 
 const RightBar = () => {
+  const buttonColor = ''
+
+
   return (
     <div className="rightBar">
       <div className="container">
@@ -13,8 +18,8 @@ const RightBar = () => {
               <span>JC Denton</span>
             </div>
             <div className="buttons">
-              <button>Follow</button>
-              <button>Dismiss</button>
+              <AnimatedButtonBlue buttonText={'Follow'} />
+              <AnimatedButtonRed buttonText={'Dismiss'} />
             </div>
           </div>
         </div>

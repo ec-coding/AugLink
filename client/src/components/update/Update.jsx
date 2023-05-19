@@ -3,6 +3,7 @@ import "./update.scss"
 import { makeRequest } from '../../axios'
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { motion } from "framer-motion";
 
 const Update = ({ setOpenUpdate, user }) => {
   const [cover, setCover] = useState(null)
@@ -58,13 +59,18 @@ const Update = ({ setOpenUpdate, user }) => {
   };
 
   return (
-    <div className="update">
+    <motion.div className="update"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.5 }}
+    >
       <div className="wrapper">
         <h1>Update Your Profile</h1>
         <form>
           <div className="files">
             <label htmlFor="cover">
-              <span>Cover Picture</span>
+              <span>Profile Picture</span>
               <div className="imgContainer">
                 <img
                   src={
@@ -84,7 +90,7 @@ const Update = ({ setOpenUpdate, user }) => {
               onChange={(e) => setCover(e.target.files[0])}
             />
             <label htmlFor="profile">
-              <span>Profile Picture</span>
+              <span>Cover Picture</span>
               <div className="imgContainer">
                 <img
                   src={
@@ -107,21 +113,21 @@ const Update = ({ setOpenUpdate, user }) => {
           <label>Email</label>
           <input
             type="text"
-            value={texts.email}
+            value={texts?.email}
             name="email"
             onChange={handleChange}
           />
           <label>Password</label>
           <input
             type="text"
-            value={texts.password}
+            value={texts?.password}
             name="password"
             onChange={handleChange}
           />
           <label>Name</label>
           <input
             type="text"
-            value={texts.name}
+            value={texts?.name}
             name="name"
             onChange={handleChange}
           />
@@ -129,14 +135,14 @@ const Update = ({ setOpenUpdate, user }) => {
           <input
             type="text"
             name="city"
-            value={texts.city}
+            value={texts?.city}
             onChange={handleChange}
           />
           <label>Website</label>
           <input
             type="text"
             name="website"
-            value={texts.website}
+            value={texts?.website}
             onChange={handleChange}
           />
           <button onClick={handleClick}>Update</button>
@@ -145,7 +151,7 @@ const Update = ({ setOpenUpdate, user }) => {
           close
         </button>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

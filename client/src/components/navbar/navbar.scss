@@ -5,7 +5,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 20px;
+        padding: 30px 20px;
         height: 50px;
         border-bottom: 1px solid themed("border");
         position: sticky;
@@ -17,17 +17,30 @@
         .left {
             display: flex;
             align-items: center;
+            text-align: center;
             gap: 30px;
     
             span {
                 font-weight: bold;
-                font-style: 20px;
+                font-size: 20px;
                 color: themed("logo")
+            }
+
+            div {
+
+                h6 {
+                    font-size: 12px;
+                }
+
+                &:hover {
+                    color: themed('hoverText');
+                }
+
             }
 
             img {
                 margin-top: 10px;
-                width: 100px;
+                width: 120px;
             }
     
             .search {
@@ -41,6 +54,7 @@
                 input {
                     border: none;
                     width: 500px;
+                    padding: 0 10px;
                     background-color: transparent;
                     color: themed("textColor");
 
@@ -58,12 +72,25 @@
         .right {
             display: flex;
             align-items: center;
+            text-align: center;
             gap: 20px;
 
             @include mobile {
                 display: none;
             }
     
+            div {
+
+                h6 {
+                    font-size: 12px;
+                }
+
+                &:hover {
+                    color: themed('hoverText');
+                }
+            }
+
+
             .user {
                 display: flex;
                 align-items: center;

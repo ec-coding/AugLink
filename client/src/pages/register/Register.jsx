@@ -12,11 +12,13 @@ const Register = () => {
     email: "",
     password: "",
     name: "",
-  })
-  const [err, setErr] = useState(null)
+  });
+  const [err, setErr] = useState(null);
+  const [disableButton, setDisableButton] = useState(false);
+  const [regSuccess, setRegSuccess] = useState(false)
 
-  const navigate = useNavigate()
-  
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }))
   };
@@ -27,7 +29,7 @@ const Register = () => {
 
     try {
       await axios.post("http://localhost:5050/api/auth/register", inputs);
-      navigate("/login")
+      setRegSuccess(true)
     } catch (err) {
       setErr(err.response.data)
     }
@@ -35,7 +37,8 @@ const Register = () => {
 
   return (
     <div className="register">
-      <div className="card">
+      <motion.div className="card"
+      >
         <motion.div className="left"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -44,7 +47,7 @@ const Register = () => {
           <img src="https://i.imgur.com/w4lLPlJ.png" alt="" />
           <Typed
             strings={[
-              "Embrace the Augmented Future.<br>Connect with the World."    
+              "Embrace the Augmented Future.<br>Connect with the World."
             ]}
             className={"rt-subheader"}
             typeSpeed={25}
@@ -56,6 +59,10 @@ const Register = () => {
           </Link>
         </motion.div>
         <motion.div className="right"
+          initial={{ y: 25, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -25, opacity: 0 }}
+          transition={{ duration: 0.75 }}
         >
           <h1>REGISTER</h1>
           <form action="">
@@ -64,10 +71,11 @@ const Register = () => {
             <input type="password" placeholder="Password" name="password" onChange={handleChange} />
             <input type="text" placeholder="Name" name="name" onChange={handleChange} />
             {err && err}
-            <button onClick={handleClick} >SUBMIT</button>
+            {regSuccess && <span>Registration successful.</span>}
+            <button onClick={handleClick} disabled={disableButton} >SUBMIT</button>
           </form>
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   )
 }

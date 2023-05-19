@@ -14,6 +14,7 @@ const Login = () => {
     password: "",
   })
   const [err, setErr] = useState(null)
+  const [loginErr, setLoginErr] = useState(null)
 
   const navigate = useNavigate()
 
@@ -28,6 +29,8 @@ const Login = () => {
       await login(inputs);
       navigate("/")
     } catch (err) {
+      console.log(err.response.data)
+      setLoginErr(err.response.data)
       setErr(err.response.data)
     }
 
@@ -35,7 +38,8 @@ const Login = () => {
 
   return (
     <motion.div className="login">
-      <div className="card">
+      <motion.div className="card"
+      >
         <motion.div className="left"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -44,7 +48,7 @@ const Login = () => {
           <img src="https://i.imgur.com/w4lLPlJ.png" alt="" />
           <Typed
             strings={[
-              "Embrace the Augmented Future.<br>Connect with the World."    
+              "Embrace the Augmented Future.<br>Connect with the World."
             ]}
             className={"rt-subheader"}
             typeSpeed={25}
@@ -56,16 +60,20 @@ const Login = () => {
           </Link>
         </motion.div>
         <motion.div className="right"
+          initial={{ y: 25, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -25, opacity: 0 }}
+          transition={{ duration: 0.75 }}
         >
           <h1>ENTER CREDENTIALS</h1>
           <form action="" onSubmit={handleLogin}>
             <input type="text" placeholder="Username" name="username" onChange={handleChange} />
             <input type="password" placeholder="Password" name="password" onChange={handleChange} />
-            {/* {err & err} */}
+            <span>{loginErr}</span>
             <button onClick={handleLogin}>LOGIN</button>
           </form>
         </motion.div>
-      </div>
+      </motion.div>
       <script src="/script.js"></script>
     </motion.div>
   )

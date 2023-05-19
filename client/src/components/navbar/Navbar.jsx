@@ -25,23 +25,52 @@ const Navbar = () => {
         <Link to="/" style={{ textDecoration: "none" }}>
           <img src="https://i.imgur.com/w4lLPlJ.png" alt="" />
         </Link>
-        <HomeOutlinedIcon />
-        {darkMode ? (
-          <WbSunnyOutlinedIcon onClick={toggle} />
+        <div className='iconHover'>
+          <HomeOutlinedIcon />
+          <br />
+          <h6>Home</h6>
+        </div>
 
+        {darkMode ? (
+          <div>
+            <WbSunnyOutlinedIcon onClick={toggle} />
+            <br />
+            <h6>Light Mode</h6>
+          </div>
         ) : (
-          <DarkModeOutlinedIcon onClick={toggle} />
+          <div>
+            <DarkModeOutlinedIcon onClick={toggle} />
+            <br />
+            <h6>Dark Mode</h6>
+          </div>
         )}
-        <GridViewOutlinedIcon />
+        <div>
+          <GridViewOutlinedIcon />
+          <br />
+          <h6>Groups</h6>
+        </div>
         <div className="search">
           <SearchOutlinedIcon />
           <input type="text" placeholder="Search..." />
         </div>
       </div>
       <div className="right">
-        <PersonOutlinedIcon />
-        <EmailOutlinedIcon />
-        <NotificationsOutlinedIcon />
+        <div>
+          <PersonOutlinedIcon />
+          <br />
+          <h6>Friends</h6>
+        </div>
+          <div>
+          <EmailOutlinedIcon />
+          <br />
+          <h6>Messages</h6>
+          </div>
+          <div>
+          <NotificationsOutlinedIcon />
+          <br />
+          <h6>Notifications</h6>
+          </div>
+
         <div className="user">
           <Dropdown />
         </div>

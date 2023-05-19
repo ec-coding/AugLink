@@ -56,20 +56,14 @@ const LeftBar = () => {
                     </div>
                     <div className="item">
                         <div>
-                            {/* <img src={Market} alt="" /> */}
-                            <span>MARKET</span>
-                        </div>
-                    </div>
-                    <div className="item">
-                        <div>
                             {/* <img src={Watch} alt="" /> */}
-                            <span>WATCH</span>
+                            <span>MESSAGES</span>
                         </div>
                     </div>
                     <div className="item">
                         <div>
                             {/* <img src={Memories} alt="" /> */}
-                            <span>MEMORIES</span>
+                            <span>SETTINGS</span>
                         </div>
                     </div>
                 </div>

@@ -15,6 +15,7 @@ import Posts from "../../components/posts/Posts"
 import { useContext, useState } from "react";
 import { AuthContext } from "../../context/authContext";
 import Update from "../../components/update/Update";
+import ShiftingButton from "../../components/shiftingButton/ShiftingButton";
 
 
 const Profile = () => {
@@ -64,7 +65,7 @@ const Profile = () => {
         <>
           <div className="images">
             <img src={"/uploads/" + data?.coverPic} alt="" className="cover" />
-            <img src={"/uploads/" + data.profilePic} alt="" className="profilePic" />
+            <img src={"/uploads/" + data?.profilePic} alt="" className="profilePic" />
           </div>
           <div className="profileContainer">
             <div className="uInfo">
@@ -86,19 +87,20 @@ const Profile = () => {
                 </a>
               </div>
               <div className="center">
-                <span>{data.name}</span>
+                <span>{data?.name}</span>
                 <div className="info">
                   <div className="item">
                     <PlaceIcon />
-                    <span>{data.city}</span>
+                    <span>{data?.city}</span>
                   </div>
                   <div className="item">
                     <LanguageIcon />
-                    <span>{data.website}</span>
+                    <span>{data?.website}</span>
                   </div>
                 </div>
                 {relationshipIsLoading ? "Loading" : userId === currentUser.id ? (
-                  <button onClick={() => setOpenUpdate(true)}>Update</button>
+                  <ShiftingButton />
+                  // <button onClick={() => setOpenUpdate(true)}>Update</button>
                 ) : (
                   <button onClick={handleFollow}>{relationshipData.includes(currentUser.id) ? "Following" : "Follow"}</button>
                 )}

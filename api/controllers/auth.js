@@ -20,7 +20,8 @@ export const register = (req, res) => {
         const values = [req.body.username, req.body.email, hashedPassword, req.body.name]
 
         db.query(q, [values], (err, data) => {
-            return res.status(200).json("User has been created.")
+            if (err) return res.status(500).json(err);
+            return res.status(200).json("User has been created.");
         })
     })
 }
@@ -34,7 +35,10 @@ export const login = (req, res) => {
 
         // Checks if the entered password matches the stored hashed password
         // If a match is detected, it returns true; otherwise, it returns falsy
-        const checkPassword = bcrypt.compareSync(req.body.password, data[0].password)
+        const checkPassword = bcrypt.compareSync(
+            req.body.password,
+            data[0].password
+        )
 
         if (!checkPassword)
             return res.status(400).json("Wrong password or username.");

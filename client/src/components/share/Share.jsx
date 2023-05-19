@@ -6,6 +6,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../context/authContext";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { makeRequest } from "../../axios";
+import AnimatedButtonGold from "../animatedButton/AnimatedButtonGold";
 
 const Share = () => {
     const [file, setFile] = useState(null);
@@ -93,7 +94,8 @@ const Share = () => {
                         </div>
                     </div>
                     <div className="right">
-                        <button onClick={handleClick}>Share</button>
+                        <AnimatedButtonGold onClick={handleClick} buttonText={'Share'} />
+                        {/* <button onClick={handleClick}>Share</button> */}
                     </div>
                 </div>
             </div>
