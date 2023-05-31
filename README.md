@@ -9,8 +9,7 @@
 AugLink is a social networking app which takes inspiration from various entries in the cyberpunk genre, including but not limited to Deus Ex, Cyberpunk 2077, and Blade Runner.
 </p>
 <p align="center">
-<h3 align="center"><a href="https://github.com/ec-coding/AugLink" target="_blank" rel="noreferrer">Repo</a></h3>
-
+Hosted version coming soon
 </p>
 
 ## How It's Made:
