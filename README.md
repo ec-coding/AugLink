@@ -25,7 +25,10 @@ Hosted version coming soon
     <img src="https://img.shields.io/static/v1?label=|&message=MYSQL&color=cdd148&style=plastic&logo=mysql"/>
 
 ## Optimizations
-- Pending
+- Front-End
+    - Integrate view transitions with side bar buttons
+- Back-End
+    - Add additional UI features, such as Friends, Groups, and Messaging.
 
 ## Lessons Learned:
 - Sass
