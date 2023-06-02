@@ -7,7 +7,8 @@
         top: 50px;
         height: calc(100vh - 50px);
         overflow: scroll;
-        background-color: themed("bg");
+        background-color: themed("bgSoft");
+        background-image: linear-gradient(rgba(133, 141, 255, 0.25) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.5) 80%, rgba(133, 141, 255, 0.25) 100%);
         color: themed("textColor");
         z-index: 1;
 

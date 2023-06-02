@@ -8,6 +8,7 @@
         height: calc(100vh - 50px);
         overflow: scroll;
         background-color: themed("bgSoft");
+        background-image: linear-gradient(rgba(133, 141, 255, 0.25) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0.5) 80%, rgba(133, 141, 255, 0.25) 100%);
         z-index: 1;
 
         @include mobile {
@@ -33,7 +34,7 @@
                 margin-bottom: 20px;
                 background-color: themed("bg");
 
-                span {
+                .subheader {
                     color: gray;
                 }
 
@@ -68,6 +69,8 @@
 
                         p {
                             color: themed("textColorSoft");
+                            padding-right: 5px;
+                            font-size: 14px;
                         }
 
                         span {

@@ -2,29 +2,29 @@ import React from 'react'
 import "./rightBar.scss"
 import AnimatedButtonBlue from '../animatedButton/AnimatedButtonBlue';
 import AnimatedButtonRed from '../animatedButton/AnimatedButtonRed';
+import ShiftingButton from '../shiftingButton/ShiftingButton';
 
 const RightBar = () => {
   const buttonColor = ''
-
 
   return (
     <div className="rightBar">
       <div className="container">
         <div className="item">
-          <span>Suggestions For You</span>
+          <span className="subheader">Suggestions For You</span>
           <div className="user">
             <div className="userInfo">
               <img src="https://i.imgur.com/2tH8Otv.png" alt="" />
               <span>JC Denton</span>
             </div>
             <div className="buttons">
-              <AnimatedButtonBlue buttonText={'Follow'} />
-              <AnimatedButtonRed buttonText={'Dismiss'} />
+              <ShiftingButton buttonText={"follow"} />
+              <ShiftingButton buttonText={"dismiss"} />
             </div>
           </div>
         </div>
         <div className="item">
-          <span>Latest Activity</span>
+          <span className="subheader">Latest Activity</span>
           <div className="user">
             <div className="userInfo">
               <img src="https://i.imgur.com/2tH8Otv.png" alt="" />
@@ -32,7 +32,7 @@ const RightBar = () => {
               <span>JC Denton</span> changed their cover picture
               </p>
             </div>
-            <span>1 min ago</span>
+            <span className="subheader">1 min ago</span>
           </div>
           <div className="user">
             <div className="userInfo">
@@ -41,11 +41,11 @@ const RightBar = () => {
               <span>JC Denton</span> switched to non-lethal takedowns
               </p>
             </div>
-            <span>30 min ago</span>
+            <span className="subheader">30 min ago</span>
           </div>
         </div>
         <div className="item">
-          <span>Online Friends</span>
+          <span className="subheader">Online Friends</span>
           <div className="user">
             <div className="userInfo">
               <img src="https://i.imgur.com/2tH8Otv.png" alt="" />

@@ -99,7 +99,7 @@ const Profile = () => {
                   </div>
                 </div>
                 {relationshipIsLoading ? "Loading" : userId === currentUser.id ? (
-                  <ShiftingButton />
+                  <ShiftingButton buttonText={"update"} />
                   // <button onClick={() => setOpenUpdate(true)}>Update</button>
                 ) : (
                   <button onClick={handleFollow}>{relationshipData.includes(currentUser.id) ? "Following" : "Follow"}</button>

@@ -94,8 +94,8 @@ const Share = () => {
                         </div>
                     </div>
                     <div className="right">
-                        <AnimatedButtonGold onClick={handleClick} buttonText={'Share'} />
-                        {/* <button onClick={handleClick}>Share</button> */}
+                        {/* <AnimatedButtonGold onClick={handleClick} buttonText={'Share'} /> */}
+                        <button onClick={handleClick}>Share</button>
                     </div>
                 </div>
             </div>
