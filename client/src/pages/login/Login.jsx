@@ -27,7 +27,8 @@ const Login = () => {
     e.preventDefault()
     try {
       await login(inputs);
-      navigate("/")
+      console.log("testing login");
+      window.location.href="/";
     } catch (err) {
       console.log(err.response.data)
       setLoginErr(err.response.data)

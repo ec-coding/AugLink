@@ -3,12 +3,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: radial-gradient( circle, rgba(218, 158, 29, 0.35) 0%, rgba( 0, 0, 0, 0.5 ) 75%, rgba( 0, 0, 0, 0.75 ) 100% );
+    background-image: radial-gradient( circle, rgba(133, 141, 255, 0.25) 0%, rgba( 0, 0, 0, 0.5 ) 75%, rgba( 0, 0, 0, 0.75 ) 100% );
     .card {
         width: 50%;
         display: flex;
         // background-color: rgba(255, 255, 255, 0.75);
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.75);
         border-radius: 10px;
         min-height: 600px;
         overflow: hidden;
@@ -51,7 +51,7 @@
                 color: white;
                 font-weight: bold;
                 cursor: pointer;
-                border: 2px solid rgba(255, 217, 0, 0.75);
+                border: 2px solid rgba(255, 217, 0, 0.5);
 
                 &:hover {
                     background: rgba(255, 217, 0, 0.5);

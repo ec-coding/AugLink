@@ -18,6 +18,7 @@ import { AuthContext } from '../../context/authContext';
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { makeRequest } from '../../axios';
 import { useLocation } from "react-router-dom";
+import { Flipper, Flipped } from 'react-flip-toolkit';
 
 const LeftBar = () => {
 
@@ -26,9 +27,9 @@ const LeftBar = () => {
     const userId = parseInt(useLocation().pathname.split("/")[2])
 
     const { isLoading, error, data } = useQuery(['user'], () =>
-      makeRequest.get("/users/find/" + userId).then((res) => {
-        return res.data;
-      })
+        makeRequest.get("/users/find/" + userId).then((res) => {
+            return res.data;
+        })
     );
 
     return (
@@ -44,26 +45,30 @@ const LeftBar = () => {
 
                     <div className="item">
                         <div>
-                            {/* <img src={Friends} alt="" /> */}
-                            <span>FRIENDS</span>
+                            <Flipped flipId="navFriends">
+                                <span>FRIENDS</span>
+                            </Flipped>
                         </div>
                     </div>
                     <div className="item">
                         <div>
-                            {/* <img src={Groups} alt="" /> */}
-                            <span>GROUPS</span>
+                            <Flipped flipId="navGroups">
+                                <span>GROUPS</span>
+                            </Flipped>
                         </div>
                     </div>
                     <div className="item">
                         <div>
-                            {/* <img src={Watch} alt="" /> */}
-                            <span>MESSAGES</span>
+                            <Flipped flipId="navMessages">
+                                <span>MESSAGES</span>
+                            </Flipped>
                         </div>
                     </div>
                     <div className="item">
                         <div>
-                            {/* <img src={Memories} alt="" /> */}
-                            <span>SETTINGS</span>
+                            <Flipped flipId="navSettings">
+                                <span>SETTINGS</span>
+                            </Flipped>
                         </div>
                     </div>
                 </div>
